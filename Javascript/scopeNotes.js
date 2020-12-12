@@ -38,5 +38,3 @@
 // Scope Chain
 // When a variable is used in Javascript the Js engine
 // will try to find the variable's value in the current scope
-
-// ""
