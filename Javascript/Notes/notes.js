@@ -106,3 +106,89 @@
 // Class method that accepts one argument and returns a boolean 
 // representing whether it is an Array.
 
+//  This and That notes
+// this
+
+let cat = {
+    purr: function () {
+        console.log("meow")
+    },
+    purrMore: function () {
+        for (let i = 0; i < 10; i++) {
+            this.purr()
+        }
+    }
+}
+
+cat.purr()
+cat.purrMore()
+
+// Scope issues with this
+
+function times(num, fun) {
+    for (let i = 0; i < num; i++) {
+        fun()
+    }
+}
+
+const cast = {
+    age: 5,
+
+    ageOneYear: function() {
+        this.age += 1;
+    }
+}
+
+cat.ageOneYear()
+
+times(10, cat.ageOneYear); // this.age is note defined
+
+// Two ways to solve this problem ^^
+
+// `times` is the same:
+function times(num, fun) {
+    for (let i = 0; i < num; i++) {
+      fun(); // call is made "function-style"
+    }
+  }
+  
+  const cat = {
+    age: 5,
+  
+    ageOneYear: function() {
+      this.age += 1;
+    }
+  };
+  
+  // Function argument is different:
+  times(10, function() {
+    cat.ageOneYear();
+  });
+  
+
+// set to window. But the closure doesn't care, because inside, 
+// it explicitly calls ageOneYear method style on cat.
+
+// This is a very common pattern, so there is another, less 
+// verbose alternative using Function.prototype.bind.
+
+// bind is a method you can call on JS functions.
+// Other methods defined on Function objects live 
+// in Function.prototype.
+
+// bind works just like the closure we made, 
+// in which cat#ageOneYear is called method style on the cat object. 
+// cat.ageOneYear.bind(cat) returns a closure that will still be called function-style, but which calls cat.ageOneYear method-style inside of it.
+
+// Note that you can bind functions to any scope, 
+// not just this:
+
+const crazyMethod = cat.ageOneYear.bind(dog);
+
+// Anatomy of an Arrow Function
+// (parameters, go, here) => {
+//   statements;
+//   return value;
+// };
+
+// Statements are, more generally, any line of cod
