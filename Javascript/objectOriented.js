@@ -45,6 +45,37 @@
 // Do this is Terminal node
 // js notes
 
+function summation(arr) {
+    let sum = 1;
+
+    // closure
+    function summer() {
+        for(let i= 0; i < arr.length; i++) {
+            sum *= arr[i]
+        }
+    }
+
+    summer();
+
+    return sum;
+}
+
+console.log(summation([1, 2, 3, 4]))
+
+
+
+let callback = function() {
+    console.log("It has been 7 seconds!")
+}
+let timeToWait = 7000;
+
+global.setTimeout(callback, timeToWait);
+
+// more likely to see:
+global.setTimeout(function() {
+    console.log("It has been 7 seconds")
+}, 7000);
+
 
 
 function soundMaker(sound, times) {
