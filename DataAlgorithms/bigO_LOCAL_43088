@@ -1,0 +1,109 @@
+BIG O NOTES
+
+Complexity Analysis
+As software engineers, our goal is not just to solve problems. 
+Rather, our goal is to solve problems efficiently and elegantly.
+ Not all solutions are made equal! 
+ In this section we'll explore how to analyze the efficiency of 
+ algorithms in terms of their speed (time complexity) and memory consumption (space complexity).
+
+Motivation
+Let's begin by understanding what method we 
+should not use when describing the 
+efficiency of our algorithms. Most importantly, 
+we'll want to avoid using absolute units of 
+time when describing speed. When the software 
+engineer exclaims, "My function runs in 0.2 seconds, 
+it's so fast!!!", the computer scientist is not impressed. 
+Skeptical, the computer scientist asks the following questions:
+
+What computer did you run it on? Maybe the credit belongs to the hardware and not the software. Some hardware architectures will be better for certain operations than others.
+Were there other background processes running on the computer that could have effected the runtime? It's hard to control the environment during performance experiments.
+Will your code still be performant if we increase the size of the input? For example, sorting 3 numbers is trivial; but how about a million numbers?
+The job of the software engineer is to focus on the software detail and not necessarily the hardware it will run on. Because we can't answer points 1 and 2 with total certainty, we'll want to avoid using concrete units like "milliseconds" or "seconds" when describing the efficiency of our algorithms. Instead, we'll opt for a more abstract approach that focuses on point 3. This means that we should focus on how the performance of our algorithm is effected by increasing the size of the input. In other words, how does our performance scale?
+
+Big-O Notation
+In Computer Science, we use Big-O notation as a tool for describing the efficiency of algorithms with respect to the size of the input argument. We use mathematical functions in Big-O notation, so there are a few big picture ideas that we'll want to keep in mind:
+
+The function should be defined in terms of the size of the input(s).
+A smaller Big-O function is more desirable than a larger one. Intuitively, we want our algorithms to use the minimal amount of time and memory possible.
+Big-O describes the worst case scenario, also known as the upper-bound. We prepare our algorithm for the worst-case, because the best-case is a luxury we can't guarantee.
+A Big-O function should be simplified to show only it's most dominant mathematical term.
+The first 3 points are conceptual, so they are easy to swallow. However, point 4 is typically the biggest source of confusion when learning the notation. Before we apply Big-O to our code, we'll need to first understand the underlying math and simplification process.
+
+
+Simplifying Math Terms
+We want our Big-O notation to describe the performance of our algorithm with respect to the input size and nothing else. Because of this, we should to simplify our Big-O functions using the following rules:
+
+Simplify Products: if the function is a product of many factors, we drop the factors that don't depend on the size of the input.
+Simplify Sums: if the function is a sum of many terms, we keep the term with the largest growth rate and drop the other terms.
+Well look at these rules in action, but first we'll define a few things t
+
+n is the size of the input
+T(f) refers to the unsimplified function
+O(f) refers to the Big-O simplified function
+
+Simplifying a Product
+If the function consists of a product of many factors, we drop the factors that don't depend on the size of the input, n. The factors that we drop are called constant factors because their size remains consistent as we increase the size of the input. The reasoning behind this simplification is that we make the input large enough, the non-constant factors will overshadow the constant ones.
+
+Simplifying a Sum
+If the function consists of a sum of many terms, we only need to show the term that grows the fastest, relative to the size of the input. The reasoning behind this simplification is that if we make the input large enough, the fastest growing term will overshadow the other, smaller terms. To understand which term to keep, you'll need to recall the relative size of our common math terms from the previous section.
+
+As an aside, we'll often omit the multiplication symbol in expressions as a form of shorthand. For example, we'll write O( 5n2 ) in place of O( 5 * n2 ).
+
+Putting it all together
+These two rules are all we'll need to Big-O simplify any functions. We just apply the product rule to simplify all terms, then apply the sum rule to select the single most dominant term.
+
+
+How to Simplify a Function into a Big-O Notation
+
+Simplify Products: if the function is a product of manyu factors, we 
+drop the factors that don't depend on the size of the input
+
+Sinplify Sums: if the function is a sum of many terms, we keep
+the term with the largest growth rate and drop the other terms
+
+Exercise
+It's your turn. Write the Big-O simplified versions of the following functions.
+
+
+Simplified
+
+T(5n^2) simplified is => O(n^2)
+
+T(1000n) => O(n)
+
+T(42xnxlogn) => O(nlogn)
+
+T(12) => O(1)
+
+
+
+
+
+Common Complexity Classes
+There are a few main complexity classes that you should be familiar with. These will crop up as you analyze the time and space complexity classes of your algorithms. You should absolutely know the relative order of these functions. In the chart below, we list them in descending size order. Bear in mind that a "more efficient" algorithm is one with a smaller complexity class.
+
+O(1) - Constant
+Constant (O(1)) complexity means that the algorithm takes roughly the same number of steps for any size input. In a constant time algorithm there is no relationship between the size of the input and the number of steps required. For example, this means performing the algorithm on a input of size 1 takes the same number of steps as performing it on an input of size 128! Classic Example: Checking if a key exists in a JavaScript Object.
+
+O(log(n)) - Logarithmic
+Typically, the hidden base in O(log(n)) is 2, meaning O(log2(n)). Logarithmic complexity algorithms will typically have a sense of continually "halving" the size of the input. Another tell of a Logarithmic algorithm is that we don't have to touch every element of the input. O(log2(n)) means that every time we double the size of the input, we only require one additional step. Overall, this means that a large increase of input size will increase the number of steps required by a small amount. Classic Example: Binary Search Algorithm.
+
+O(n) - Linear
+Linear complexity algorithms will touch each element of the input "once" (in the Big-O sense). Algorithms that iterate through the input without nested loops or recurse by reducing the size of the input by "one" each time are typically Linear. Classic Example: Checking if an element exists in an Array.
+
+
+O(n * log(n)) - Quasilinear / Loglinear
+This complexity class is common in recursive sorting algorithms such as mergeSort and quickSort. This class is a combination of both linear and logarithmic behavior, so features from both classes are evident. Typically, this means that the recursive calls will halve the input each time (logarithmic), but iterations are also performed (linear). Classic Example: Merge Sort Algorithm.
+
+O(nc) Polynomial complexity refers to complexity of the form O(nc) where n is the size of the input and c is some fixed constant. For example, O(n3) is a larger/worse function than O(n2), but they belong to the same complexity family. Nested loops are usually the indicator of this complexity class. Classic Examples: Generate all pairs of elements in an array (n2). Generate all triplets of elements in an array (n3).
+
+
+O(cn) - Exponential
+Exponential complexity refers to functions of the form O(cn) where n is the size of the input and c is some fixed constant. For example, O(3n) is a larger/worse function than O(2n), but they both belong to the same complexity family. A common indicator of this complexity class is recursive code where there is a constant number of recursive calls in each stack frame. The c will be the number of recursive calls made in each stack frame. Algorithms with this complexity are considered quite slow. Classic Example: Generate all subsets/combinations of elements in an array (O(2n)). In subsets/combinations, the order does not matter.
+
+O(n!) - Factorial
+Recall that n! = (n) * (n - 1) * (n - 2) * ... * 1. This complexity is typically the largest/worst we will end up implementing. A typical indicator of this complexity class is recursive code that has a variable number of recursive calls in each stack frame. Note that Factorial is worse than Exponential because Factorial algorithms have a variable amount of recursive calls in each frame, whereas Exponential algorithms have a constant amount in each frame. Classic Example: Generate all permutations of elements in an array. In permutations, the order does matter.
+
+

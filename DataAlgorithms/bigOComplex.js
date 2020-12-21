@@ -4,12 +4,16 @@
 //     return n * 2 + 1
 // }
 
+<<<<<<< HEAD
 // ^^ T(2) => O(!)
 
+=======
+>>>>>>> main
 // function constant_2(n) {
 //     for (let i = 1; i <= 100; i++ ) {
 
 //     }
+<<<<<<< HEAD
 // }
 
 //  ^^ T(100) => O(!)
@@ -85,3 +89,6 @@ function factorial(n) {
         factorial(n - 1)
     }
 }
+=======
+// }
+>>>>>>> main
