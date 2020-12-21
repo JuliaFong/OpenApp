@@ -77,8 +77,33 @@ T(42xnxlogn) => O(nlogn)
 
 T(12) => O(1)
 
-Constant, Linear, Logarithmic Complexity
 
 
+
+
+Common Complexity Classes
+There are a few main complexity classes that you should be familiar with. These will crop up as you analyze the time and space complexity classes of your algorithms. You should absolutely know the relative order of these functions. In the chart below, we list them in descending size order. Bear in mind that a "more efficient" algorithm is one with a smaller complexity class.
+
+O(1) - Constant
+Constant (O(1)) complexity means that the algorithm takes roughly the same number of steps for any size input. In a constant time algorithm there is no relationship between the size of the input and the number of steps required. For example, this means performing the algorithm on a input of size 1 takes the same number of steps as performing it on an input of size 128! Classic Example: Checking if a key exists in a JavaScript Object.
+
+O(log(n)) - Logarithmic
+Typically, the hidden base in O(log(n)) is 2, meaning O(log2(n)). Logarithmic complexity algorithms will typically have a sense of continually "halving" the size of the input. Another tell of a Logarithmic algorithm is that we don't have to touch every element of the input. O(log2(n)) means that every time we double the size of the input, we only require one additional step. Overall, this means that a large increase of input size will increase the number of steps required by a small amount. Classic Example: Binary Search Algorithm.
+
+O(n) - Linear
+Linear complexity algorithms will touch each element of the input "once" (in the Big-O sense). Algorithms that iterate through the input without nested loops or recurse by reducing the size of the input by "one" each time are typically Linear. Classic Example: Checking if an element exists in an Array.
+
+
+O(n * log(n)) - Quasilinear / Loglinear
+This complexity class is common in recursive sorting algorithms such as mergeSort and quickSort. This class is a combination of both linear and logarithmic behavior, so features from both classes are evident. Typically, this means that the recursive calls will halve the input each time (logarithmic), but iterations are also performed (linear). Classic Example: Merge Sort Algorithm.
+
+O(nc) Polynomial complexity refers to complexity of the form O(nc) where n is the size of the input and c is some fixed constant. For example, O(n3) is a larger/worse function than O(n2), but they belong to the same complexity family. Nested loops are usually the indicator of this complexity class. Classic Examples: Generate all pairs of elements in an array (n2). Generate all triplets of elements in an array (n3).
+
+
+O(cn) - Exponential
+Exponential complexity refers to functions of the form O(cn) where n is the size of the input and c is some fixed constant. For example, O(3n) is a larger/worse function than O(2n), but they both belong to the same complexity family. A common indicator of this complexity class is recursive code where there is a constant number of recursive calls in each stack frame. The c will be the number of recursive calls made in each stack frame. Algorithms with this complexity are considered quite slow. Classic Example: Generate all subsets/combinations of elements in an array (O(2n)). In subsets/combinations, the order does not matter.
+
+O(n!) - Factorial
+Recall that n! = (n) * (n - 1) * (n - 2) * ... * 1. This complexity is typically the largest/worst we will end up implementing. A typical indicator of this complexity class is recursive code that has a variable number of recursive calls in each stack frame. Note that Factorial is worse than Exponential because Factorial algorithms have a variable amount of recursive calls in each frame, whereas Exponential algorithms have a constant amount in each frame. Classic Example: Generate all permutations of elements in an array. In permutations, the order does matter.
 
 
