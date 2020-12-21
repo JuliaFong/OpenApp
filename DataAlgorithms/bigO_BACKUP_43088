@@ -77,10 +77,15 @@ T(42xnxlogn) => O(nlogn)
 
 T(12) => O(1)
 
+<<<<<<< HEAD
+=======
+Constant, Linear, Logarithmic Complexity
+>>>>>>> main
 
 
 
 
+<<<<<<< HEAD
 Common Complexity Classes
 There are a few main complexity classes that you should be familiar with. These will crop up as you analyze the time and space complexity classes of your algorithms. You should absolutely know the relative order of these functions. In the chart below, we list them in descending size order. Bear in mind that a "more efficient" algorithm is one with a smaller complexity class.
 
@@ -107,3 +112,5 @@ O(n!) - Factorial
 Recall that n! = (n) * (n - 1) * (n - 2) * ... * 1. This complexity is typically the largest/worst we will end up implementing. A typical indicator of this complexity class is recursive code that has a variable number of recursive calls in each stack frame. Note that Factorial is worse than Exponential because Factorial algorithms have a variable amount of recursive calls in each frame, whereas Exponential algorithms have a constant amount in each frame. Classic Example: Generate all permutations of elements in an array. In permutations, the order does matter.
 
 
+=======
+>>>>>>> main
