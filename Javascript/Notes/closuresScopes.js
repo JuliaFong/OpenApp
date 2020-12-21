@@ -77,20 +77,20 @@ console.log(counter2()) // => 1
 
 // By closing over (or capturing)
 
-function Counter() {
-    this._count = 0;
-}
+// function Counter() {
+//     this._count = 0;
+// }
 
-Counter.prototype.fire = funtion() {
-    this.count += 1
-    return this._count
-}
+// Counter.prototype.fire = funtion() {
+//     this.count += 1
+//     return this._count
+// }
 
-let counter = new Counter()
-counter.fire(); // 1
-counter.fire(); // 2
-counter._count // 2
-counter._count = 0 // 0 (this works);
+// let counter = new Counter()
+// counter.fire(); // 1
+// counter.fire(); // 2
+// counter._count // 2
+// counter._count = 0 // 0 (this works);
 
 
 

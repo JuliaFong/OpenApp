@@ -1,0 +1,61 @@
+Common Math Functions
+
+need to know a baseline of math to understand efficiency of code
+
+
+constant function
+f(n) = 1
+
+Linear function
+f(n) = n
+
+ ^^ what you give this function you give this function
+ you give back the same thing
+ 
+2^5 = 2*2*2*2*2 = 32
+^exponentiation 
+
+log2^32 = 5
+
+log2^16 = 4
+
+log is the opposite of exponentiation
+
+log10^1000 = 3
+
+f(n) = log(n)
+
+Large Growth
+
+Polynomial function
+
+f(n) = n^2
+quadratic is a squared function
+cubic and quadtratic funtions belong to the same family 
+of quadtratic functions
+
+Exponential function
+
+f(n) = 2^need
+
+^^ form of a constant C raised to the raised to the Nth power
+
+Factorial operation
+
+4! = 4*3*2*1
+3! = 3*2*1
+n! = n*(n-1)*(n-2)
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
