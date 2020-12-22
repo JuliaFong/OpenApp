@@ -4,16 +4,10 @@
 //     return n * 2 + 1
 // }
 
-<<<<<<< HEAD
-// ^^ T(2) => O(!)
-
-=======
->>>>>>> main
 // function constant_2(n) {
 //     for (let i = 1; i <= 100; i++ ) {
 
 //     }
-<<<<<<< HEAD
 // }
 
 //  ^^ T(100) => O(!)
@@ -89,6 +83,82 @@ function factorial(n) {
         factorial(n - 1)
     }
 }
-=======
-// }
->>>>>>> main
+
+// Big O notation examples
+function example1(array) {
+    for (var i = 1; i <= 20; i++) {
+        for(var j = 0; j < array.length; j++) {
+
+        }
+    }
+}
+
+// un-big O version T(20n)
+// using bigO comnplexitity it would be O(n)
+
+function example2(array) {
+    for (var i = 0; i < array.length; i++) {
+        for (var j = 0; j < array.length; j++) {
+
+        }
+    }
+
+    for (var k = 0; k < array.length; k++) {
+    }
+}
+
+// the unsimplified version it T(n^2+n)
+// Simplified big O notation O(n^2)
+
+function example3(n) {
+    for (var i = 0; i < (n / 2); i++) {
+    }
+}
+
+// unsimplified T(n/2) =>T(1/2n)
+// simplified to big O notation is O(n)
+
+// example 4 is a recursive example
+
+function example4(n) {
+    if (n === 0) return;
+
+    for (var i = 1; i <= 23; i++) {    
+    }
+
+    example4(n - 1)
+}
+
+
+function example5(n) {
+    if (n <= 1) return;
+
+    example5(n - 1);
+    example5(n - 1);
+    example5(n - 1);
+    example5(n - 1);
+
+}
+
+// runtime ^^ O(4^n)
+
+function example6(n) {
+    if (n <= 1) return
+    for (var i = 1; i <= 4; i++) {
+        example6(n - 1)
+    }
+}
+
+function example7(str) {
+    if (str.length <= 1) return;
+
+    let midIdx = Math.floor(str.length / 2);
+    let left = str.slice(0, midIdx)
+    let right = str.slice(midIdx)
+
+    example7(left)
+    example7(right)
+}
+
+// ^^ O(nlog2^n)
+
