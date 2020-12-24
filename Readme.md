@@ -7,3 +7,5 @@ Open App Academys Open curriculum
 * Sharpen Object Oriented Programing knowledge
 * Review Javascript
 * Become better at solving Algorithmic problems
+* Get a deeper understanding on how to think Algorithmically 
+* Review Recursion
