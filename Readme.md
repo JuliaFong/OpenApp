@@ -4,6 +4,8 @@ Open App Academys Open curriculum
 
 # Learning Goals
 * Learn Ruby
-* Sharpen Object Oriented Programing knowledge
 * Review Javascript
+* Review Big O Notation
+* Sharpen Object Oriented Programing knowledge
 * Become better at solving Algorithmic problems
+* Get a deeper understanding of Memoization
