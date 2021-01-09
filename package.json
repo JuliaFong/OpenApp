@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/JuliaFong/OpenApp/issues"
   },
-  "homepage": "https://github.com/JuliaFong/OpenApp#readme"
+  "homepage": "https://github.com/JuliaFong/OpenApp#readme",
+  "dependencies": {
+    "mocha": "^8.2.1"
+  }
 }
