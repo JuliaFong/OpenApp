@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/JuliaFong/OpenApp#readme",
   "dependencies": {
+
     "node": "^15.4.0"
+
+    "mocha": "^8.2.1"
+
   }
 }
