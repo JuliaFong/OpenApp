@@ -89,3 +89,15 @@ function fib(n) {
 // Dynamic Programming since we saved previous subproblem results in order to 
 // calculate the final answer. There's no fancy name for this strategy;
 //  it's just amazing.
+
+
+// The Tabulation Formula
+// Here are our general guidelines for implementing a Tabulation strategy. Bear in mind that Dynamic Programming (whether it be by Tabulation or Memoization) is only applicable to problems that can be divided into many subproblems of similar structure. This is just a general recipe so adjust for taste depending on your problem:
+
+// Create the table array based off of the size of the input
+// this isn't always straightforward if you have multiple args
+// Initialize some values in the table that "answer" the trivially small subproblem
+// usually this means initializing the first entry of the table
+// Iterate through the array and fill in remaining entries
+// calculating the next entry should require using other entries of the table
+// Your final answer is the last entry in the table (usually)
