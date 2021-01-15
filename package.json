@@ -19,8 +19,14 @@
   "dependencies": {
 
     "node": "^15.4.0"
+  },
+  "devDependencies": {}
+
+
+    "node": "^15.4.0"
 
     "mocha": "^8.2.1"
 
   }
+
 }
