@@ -12,3 +12,4 @@ Open App Academys Open curriculum
 * Review Memoization
 * Review Tabulation
 * Review the difference between Tabulation and Memoization
+* Review Bubble Sort Method
