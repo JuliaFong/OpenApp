@@ -20,13 +20,13 @@
 
     "node": "^15.4.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
 
 
-    "node": "^15.4.0"
+    "node": "^15.4.0",
 
     "mocha": "^8.2.1"
 
   }
 
-}
+
