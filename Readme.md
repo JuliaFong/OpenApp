@@ -14,4 +14,7 @@ Open App Academys Open curriculum
 * Become better at solving Algorithmic problems
 * Get a deeper understanding on how to think Algorithmically 
 * Review Recursion
+* Review Memoization
+* Review Tabulation
+* Review the difference between Tabulation and Memoization
 
