@@ -17,4 +17,9 @@ Open App Academys Open curriculum
 * Review Memoization
 * Review Tabulation
 * Review the difference between Tabulation and Memoization
+* Review bubble sort method
+* Review selection sort 
+* Review insertion sort
+* Understand the differnce betweeen the different sort methods
+
 
