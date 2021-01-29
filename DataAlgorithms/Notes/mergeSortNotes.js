@@ -83,7 +83,7 @@ function mergeSort(array) {
         return array
     }
 
-    let midIdx = Math.floow(array.length / 2)
+    let midIdx = Math.floor(array.length / 2)
     let leftHalf = array.slice(0, midIdx)
     let rightHalf = array.slice(midIdx)
 
