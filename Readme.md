@@ -21,5 +21,7 @@ Open App Academys Open curriculum
 * Review selection sort 
 * Review insertion sort
 * Understand the differnce betweeen the different sort methods
+* Learn about Radix sort method
+* Understand when it's appropriate and why to use the Radix sort method
 
 
