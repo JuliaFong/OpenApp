@@ -31,3 +31,71 @@
 //  remembering that our counter array's indices now represent values that are offset by Math.abs(smallest).
 
 // For simplicity, and to get the base algorithm down, let's just assume our input has all positive integers for now.
+
+// Implementation - How does it work?
+// Counting Sort works by allocating an array of counters k elements long,
+//  where k is the largest integer in our input. Upon initialization,
+//  we set each element of the new counter array to zero. 
+// As long as k is not giant, this will be fine for our purposes.
+
+// After allocating an array of counters, we iterate across the input array. 
+// As we approach each integer, we increment the counter at the index that is equal
+//  to the number we have just approached in our input by one.
+
+// For example, if the integer we've approached in the input array is 5, 
+// we count it by incrementing the value at i = 5 in our counter array by 1.
+//  In this way, we keep track of the number of occurences of each integer in our input array, 
+// and we do it in ascending order!
+
+
+// When we're finished counting, we iterate across the counters array. 
+// For each non-zero value we find, we push that number of the current counters index, 
+// i, to our output array.
+
+// Finally, we return the output array, which should now contain each of our input array's
+//  elements in ascending order. If you'd prefer to sort in descending order, 
+// simply iterate through the counters array backwards and follow the same process.
+
+// The following code is the solution to countingSort for input arrays containing only positive integers:
+
+function countingSort(arr, max) {
+    const result = []
+    const counters = new Array(max + 1).fill(0)
+
+    for (let i = 0; i < arr.length; i ++) {
+        counters[arr[i]]++
+    }
+
+    for (let i = 0; i < counters.length; i++) {
+        while (counters[i] > 0) {
+            result.push(i)
+            counters[i]--
+        }
+    }
+
+    return result
+
+}
+
+// Time and Space Complexity Analysis
+// Time Complexity
+// In general, the best, average, and worst case time complexities of 
+// Counting Sort are all the same.
+
+// Since this algorithm requires iterating over all n elements of the input array,
+//  and then subsequently iterating over our each element of our counter array (which has length k), 
+// we wind up with a run time of O(n + k). This makes Counting Sort faster than any of the previous comparison-based algorithms, 
+// and also faster than Radix Sort!
+
+// Space Complexity
+// The trade off for Counting Sort comes with its space complexity.
+//  The smaller the range of integers that can possibly occur in our input array, 
+// the more memory efficient Counting Sort will be. The larger k is, the larger the number of elements we'll have to allocate 
+// in our counter array. Thus, the space complexity of Counting Sort is O(k).
+
+// When should we use Counting Sort?
+// You should consider using Counting Sort whenever you need to:
+
+// Sort a list of integer data, and you do know the value of the largest element in the list.
+// If you do not know the largest element in the list, see radixSort!
+// Counting Sort's run time, O(n + k), is depedendent on the size of the largest integer in the input, k. For this reason, it is fastest when k is relatively small.
