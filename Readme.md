@@ -4,8 +4,11 @@ Open App Academys Open curriculum
 
 # Learning Goals
 * Learn Ruby
-* Sharpen Object Oriented Programing knowledge
 * Review Javascript
+* Review Big O Notation
+* Sharpen Object Oriented Programing knowledge
+* Become better at solving Algorithmic problems
+* Get a deeper understanding of Memoization
 * Become better at solving Algorithmic problems
 * Get a deeper understanding on how to think Algorithmically 
 * Review Recursion
@@ -13,3 +16,9 @@ Open App Academys Open curriculum
 * Review Tabulation
 * Review the difference between Tabulation and Memoization
 * Review Bubble Sort Method
+* Review selection sort 
+* Review insertion sort
+* Understand the differnce betweeen the different sort methods
+* Learn about Radix sort method
+* Understand when it's appropriate and why to use the Radix sort method
+
