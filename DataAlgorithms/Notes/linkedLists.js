@@ -93,5 +93,39 @@
 // creating a non-linear, circular version of a Linked List
 // Directionality: Head => Tail => Head => Tail
 
+// Any type of Linked List can be implemented Circularly(Circular Doubly Linked List)
+// Doubly Linked Lust is actually a special case of a Multiply Linked List
 
+
+// Linked List Methods
+
+// Linked Lists are great foundation builders when learning about data structure
+// they share a number of similar methods with other common data structures
+// You will find that many of the concepts discussed here will repeat themselves as we dive
+// into some of the more compllex non-linear data structures later on, like Trees and Graphs
+
+// Type: Insertion
+// Name: addToTial
+// Description: Adds a new node to the tail of the Linked List
+// Returns: Updated Linked List
+
+// Type: Insertion
+// Name: addToHead
+// Description: Add a new node to the head of the Linked List
+// Returns: Updated Linked List
+
+// Type: Insertion
+// Name: instertAt
+// Description: Insterts a new node at the "index", or position, specified
+// Returns: Boolean
+
+// Type: Deletion
+// Name: removeTail
+// Descriptiom: Removes the node at the tail of the Linked List
+// Returns: Removed node
+
+// Type: Deletion
+// Name: removeHead
+// Description: Removes the node at the head of the Linked List
+// Returns: Removed node
 
