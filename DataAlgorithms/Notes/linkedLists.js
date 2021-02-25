@@ -129,3 +129,107 @@
 // Description: Removes the node at the head of the Linked List
 // Returns: Removed node
 
+// Type: Deletion
+// Name: removeFrom
+// Description: Removes the node at the "index" or position, specified
+// Returns: Removed node
+
+// Type: Search
+// Name: contains
+// Description: Searches the Linked List for a node with the value specified
+// Returns: Boolean
+
+// Type: Access
+// Name: get
+// Description: Gets the node at the "index", or position, specified
+// Returns: Node at index
+
+// Type: Access
+// Name: set
+// Description: Updates the value of a node at the "index", or position, specified
+// Returns: Boolean
+
+// Type: Meta
+// Name: size
+// Description: Returns the current size of the Linked List
+// Returns: Integer
+
+// Time and Space Complexity Analysis
+// The complexities below apply to both Singly and Doubly Linked Lists:
+
+// Data Structure Operation: Access
+// Time Complexity(Avg): Θ(n)
+// Time Complexity(Worst): O(n)
+// Space Complexity(Worst): O(n)
+
+// Data Structure Operation: Search
+// Time Complexity(Avg): Θ(n)
+// Time Complexity(Worst): O(n)
+// Space Complexity(Worst): O(n)
+
+// Data Structure Operation: Insertion
+// Time Complexity: Θ(1)
+// Time Complexity(Worst): O(1)
+// Space Complexity(Worst): O(n)
+
+// Data Structure Operation: Deletion
+// Time Complexity(Avg): Θ(1)
+// Time Complexity(Worst): O(1)
+// Space Complexity(Worst): O(n)
+
+
+// Time Complexity - Access and Search:
+
+// Scenarios:
+// We have a Linked List, and we'd like to find the 8th item in the list.
+// We have a Linked List of sorted alphabet letters, and we'd like to see if the letter "Q" is inside that list.
+
+// Unlike Arrays, Linked Lists Nodes are not stored contiguously 
+// in memory, and thereby do not have an indexed set of memory 
+// addresses at which we can quickly lookup individual nodes in constant time. 
+// Instead, we must begin at the head of the list (or possibly at the tail, if we have a Doubly Linked List), 
+// and iterate through the list until we arrive at the node of interest.
+
+// In the worst case scenario, we may have to traverse the 
+// entire Linked List until we arrive at the final node. 
+// This makes both Access & Search Linear Time operations.
+
+// Time Complexity - Insertion and Deletion:
+// Scenarios:
+// We have an empty Linked List, and we'd like to insert our first node.
+// We have a Linked List, and we'd like to insert or delete a node at the Head or Tail.
+// We have a Linked List, and we'd like to insert or delete a node fr
+
+// Discussion:
+// Since we have our Linked List Nodes stored in a non-contiguous manner that relies on pointers to keep track of where the next and previous nodes live, Linked Lists liberate us from the linear time nature of Array insertions and deletions. We no longer have to adjust the position at which each node/element is stored after making an insertion at a particular position in the list. Instead, if we want to insert a new node at position i, we can simply:
+
+// Create a new node.
+// Set the new node's next and previous pointers to the nodes that live at postions i and i - 1, respectively.
+// Adjust the next pointer of the node that lives at position i - 1 to point to the new node.
+// // Adjust the previous pointer of the node that lives at position i to point to the new node.
+// And we're done, in Constant Time. No iterating across the entire list necessary.
+
+// it's tempting to call insertion or deletion in the middle of a Linked List a linear time operation since there is lookup involved.
+//  However, it's usually the case that you'll already have a reference to the node where your desired insertion or deletion will occur.
+// For this reason, we separate the Access time complexity from the Insertion/Deletion time complexity, and formally state 
+// that Insertion and Deletion in a Linked List are Constant Time across the board.
+
+
+
+// Without a reference to the node at which an insertion or deletion will occur, 
+// due to linear time lookup, an insertion or deletion in the middle of a Linked List will still take Linear Time, sum total.
+
+// Space Complexity:
+// Scenarios:
+// We're given a Linked List, and need to operate on it.
+// We've decided to create a new Linked List as part of strategy to solve some problem.
+// Discussion:
+// It's obvious that Linked Lists have one node for every one item in the list, and for that reason we know that Linked Lists take up Linear Space in memory. However, when asked in an interview setting what the Space Complexity of your solution to a problem is, it's important to recognize the difference between the two scenarios above.
+
+// In Scenario 1, we are not creating a new Linked List. We simply need to operate on the one given. Since we are not storing a new node for every node represented in the Linked List we are provided, our solution is not necessarily linear in space.
+
+// In Scenario 2, we are creating a new Linked List. If the number of nodes we create is linearly correlated to the size of our input data, we are now operating in Linear Space.
+
+// NOTE:
+// Linked Lists can be traversed both iteratively and recursively. If you choose to traverse a Linked List recursively, there will be a recursive function call added to the call stack for every node in the Linked List. Even if you're provided the Linked List, as in Scenario 1, you will still use Linear Space in the call stack, and that counts.
+
